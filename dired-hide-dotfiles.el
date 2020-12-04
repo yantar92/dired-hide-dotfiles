@@ -59,9 +59,7 @@
 (defun dired-hide-dotfiles--hide ()
   "Hide all dot-files in the current `dired' buffer."
   (when dired-hide-dotfiles-mode
-    (if (featurep 'dired+)
-	(dired-mark-files-regexp "^\\." nil 'no-dir)
-      (dired-mark-files-regexp "^\\."))
+    (dired-mark-files-regexp "^\\.")
     (dired-do-kill-lines)))
 
 ;;;###autoload
